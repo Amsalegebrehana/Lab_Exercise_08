@@ -30,7 +30,7 @@ function usingCall() {
 
     //1. Borrow fullName using call
     //2. Pass call_demo[as ui_place] , Hi I am ,[message]
-
+    Cerscy.fullName.call(ui_place, ", Hi I am ," [message])
 
 }
 
@@ -44,7 +44,7 @@ function usingApply() {
 
     //1. Borrow fullName using apply
     //2. Pass apply_demo[as ui_place] and Hi I am ,[as message] as array
-
+    fullName.apply()
 
 }
 

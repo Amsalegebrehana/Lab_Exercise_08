@@ -18,17 +18,19 @@ function arrayDestructuring() {
 
     //1. Destructor this array to firstName and lastName
 
+    let [firstName, lastName] = arr;
     //2. Display it  [Replace it with ${firstName} ${lastName} once you have the variables]
-    des_arr.innerHTML = `Hello , I am firstName lastName `
+    des_arr.innerHTML = `Hello , I am ${firstName} ${lastName} `;
 
 
     // we have an array with the name and surname
-    let str = "Margaery Tyrell"
+    let str = "Margaery Tyrell";
 
     //1. Destructor this string array to firstName and lastName by using split() method of string object
 
+    let [firstName, lastName] = str.split(' ');
     //2. Display it [Replace it with ${firstName} ${lastName} once you have the variables]
-    des_string.innerHTML = `Hello , I am firstName lastName `
+    des_string.innerHTML = `Hello , I am ${firstName} ${lastName} `
 
 
 
@@ -42,15 +44,16 @@ function objectDestructuring() {
     let person = { firstName: "John", lastName: "Smith" }
 
     //1. Destructor this object to firstName and lastName 
-
+    let {firstName, lastName} = person;
     //2. Display it [Replace it with ${firstName} ${lastName} once you have the variables]
-    des_obj1.innerHTML = `Hi , I am firstName lastName `
+    des_obj1.innerHTML = `Hi , I am ${firstName} ${lastName} `
 
 
     //1. Destructor this object to fName and sName [different naming]
 
+    let {fName, lName} = person;
     //2. Display it [Replace it with ${Name} ${lName} once you have the variables]
-    des_obj2.innerHTML = `Hi , I am fName lName `
+    des_obj2.innerHTML = `Hi , I am ${fName} ${lName} `
 
 
 }
@@ -61,7 +64,10 @@ function spreadSyntax() {
     const arr = [1, 2, 3, 4]
 
     //1. Pass the array using spread syntax
-    const result = sum1();
+    function sum1(arr){
+       return arr[0] + arr[1] + arr[2] + arr[3];
+    }
+    const result = sum1(arr);
 
     //Display it 
     spread_syntax.innerHTML = `The Sum is : ${result} `
@@ -82,6 +88,9 @@ function restSyntax() {
     const x5 = 1;
 
     //Make the function to support rest so that it can add 5 numbers
+    function sum2(x,y,...rest){
+        return x+y+rest[0] + rest[1];
+    }
     const result = sum2(x1, x2, x3, x4, x5);
 
     //Display it 
